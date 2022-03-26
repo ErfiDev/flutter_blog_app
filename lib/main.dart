@@ -1,3 +1,4 @@
+import 'package:blog_app/src/login.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,11 +15,7 @@ class App extends StatelessWidget {
         fontFamily: 'Poppins',
       ),
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World'),
-        ),
-      ),
+      home: LoginPage(),
     );
   }
 }
