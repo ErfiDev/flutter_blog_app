@@ -15,9 +15,7 @@ class _LoginState extends State<LoginScreen> {
       backgroundColor: Colors.orangeAccent,
       body: TextButton(
           onPressed: () {
-            Navigator.of(ctx).push(
-              MaterialPageRoute(builder: (ctx) => HomePage()),
-            );
+            Navigator.of(ctx).pop();
           },
           child: Text('back')),
     );
