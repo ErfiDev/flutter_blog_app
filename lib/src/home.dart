@@ -14,7 +14,7 @@ class HomePage extends StatelessWidget {
           children: [
             SizedBox(height: 35),
             Text(
-              'Welcome to the app!',
+              'Welcome!',
               style: TextStyle(fontSize: 25),
             ),
             Image(
