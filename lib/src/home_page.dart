@@ -1,5 +1,6 @@
 import 'package:blog_app/src/login_page.dart';
 import 'package:flutter/material.dart';
+import './forgotpass_page.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
@@ -7,7 +8,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(ctx) {
     return Scaffold(
-      backgroundColor: Colors.cyan,
+      backgroundColor: Theme.of(ctx).backgroundColor,
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -44,6 +45,26 @@ class HomePage extends StatelessWidget {
                 primary: Colors.cyan,
                 minimumSize: Size(150, 50),
                 backgroundColor: Colors.white,
+              ),
+            ),
+            SizedBox(height: 5),
+            TextButton(
+              child: Text(
+                'Forgot Password?',
+                style: TextStyle(
+                  fontSize: 13,
+                  color: Colors.white,
+                ),
+              ),
+              onPressed: () {
+                Navigator.of(ctx).push(
+                  MaterialPageRoute(
+                    builder: (ctx) => ForgotPassPage(),
+                  ),
+                );
+              },
+              style: TextButton.styleFrom(
+                backgroundColor: Colors.transparent,
               ),
             ),
           ],
