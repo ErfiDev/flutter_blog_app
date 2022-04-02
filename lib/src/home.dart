@@ -37,7 +37,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
             SizedBox(height: 5),
-            TextButton(
+            ElevatedButton(
               child: Text('Register', style: TextStyle(fontSize: 20)),
               onPressed: () {},
               style: TextButton.styleFrom(
