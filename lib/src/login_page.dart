@@ -12,15 +12,13 @@ class _LoginState extends State<LoginScreen> {
   Widget build(ctx) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login'),
-        backgroundColor: Theme.of(ctx).backgroundColor,
-      ),
-      backgroundColor: Colors.orangeAccent,
-      body: TextButton(
-        onPressed: () {
-          Navigator.of(ctx).pop();
-        },
-        child: Text('back'),
+        centerTitle: true,
+        title: Text(
+          'Login as a user',
+          style: TextStyle(color: Colors.cyan),
+        ),
+        backgroundColor: Colors.white,
+        iconTheme: IconThemeData(color: Colors.cyan),
       ),
     );
   }
