@@ -11,12 +11,17 @@ class _LoginState extends State<LoginScreen> {
   @override
   Widget build(ctx) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Login'),
+        backgroundColor: Theme.of(ctx).backgroundColor,
+      ),
       backgroundColor: Colors.orangeAccent,
       body: TextButton(
-          onPressed: () {
-            Navigator.of(ctx).pop();
-          },
-          child: Text('back')),
+        onPressed: () {
+          Navigator.of(ctx).pop();
+        },
+        child: Text('back'),
+      ),
     );
   }
 }
