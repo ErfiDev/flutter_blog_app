@@ -1,4 +1,6 @@
+import 'package:blog_app/src/forgotpass_page.dart';
 import 'package:blog_app/src/home_page.dart';
+import 'package:blog_app/src/login_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,6 +18,10 @@ class App extends StatelessWidget {
         backgroundColor: Colors.cyan,
       ),
       debugShowCheckedModeBanner: false,
+      routes: <String, WidgetBuilder>{
+        "/login": (ctx) => LoginScreen(),
+        "/forgotPassword": (ctx) => ForgotPassPage(),
+      },
       home: HomePage(),
     );
   }

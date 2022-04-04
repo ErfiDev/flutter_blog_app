@@ -23,9 +23,7 @@ class HomePage extends StatelessWidget {
             ),
             OutlinedButton(
               onPressed: () {
-                Navigator.of(ctx).push(
-                  MaterialPageRoute(builder: (ctx) => LoginScreen()),
-                );
+                Navigator.pushNamed(ctx, "/login");
               },
               child: Text('Login', style: TextStyle(fontSize: 20)),
               style: OutlinedButton.styleFrom(
@@ -57,11 +55,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               onPressed: () {
-                Navigator.of(ctx).push(
-                  MaterialPageRoute(
-                    builder: (ctx) => ForgotPassPage(),
-                  ),
-                );
+                Navigator.pushNamed(ctx, "/forgotPassword");
               },
               style: TextButton.styleFrom(
                 backgroundColor: Colors.transparent,
