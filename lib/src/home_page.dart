@@ -13,22 +13,24 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: 35),
+            SizedBox(height: 80),
             Text(
               'Welcome!',
               style: TextStyle(fontSize: 25),
             ),
+	    SizedBox(height: 20),		
             Image(
               image: AssetImage('images/welcome.png'),
             ),
+	    SizedBox(height: 20),
             OutlinedButton(
               onPressed: () {
                 Navigator.pushNamed(ctx, "/login");
               },
-              child: Text('Login', style: TextStyle(fontSize: 20)),
+              child: Text('Login', style: TextStyle(fontSize: 25)),
               style: OutlinedButton.styleFrom(
                 primary: Colors.white,
-                minimumSize: Size(150, 50),
+                minimumSize: Size(180, 50),
                 side: BorderSide(
                   color: Colors.white,
                   width: 2,
@@ -37,11 +39,11 @@ class HomePage extends StatelessWidget {
             ),
             SizedBox(height: 5),
             ElevatedButton(
-              child: Text('Register', style: TextStyle(fontSize: 20)),
+              child: Text('Register', style: TextStyle(fontSize: 25)),
               onPressed: () {},
               style: TextButton.styleFrom(
                 primary: Colors.cyan,
-                minimumSize: Size(150, 50),
+                minimumSize: Size(180, 50),
                 backgroundColor: Colors.white,
               ),
             ),
@@ -50,7 +52,7 @@ class HomePage extends StatelessWidget {
               child: Text(
                 'Forgot Password?',
                 style: TextStyle(
-                  fontSize: 13,
+                  fontSize: 20,
                   color: Colors.white,
                 ),
               ),
