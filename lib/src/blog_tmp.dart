@@ -1,5 +1,7 @@
 import 'package:blog_app/src/blog_class.dart';
+import 'package:blog_app/src/blog_page.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class BlogTmp extends StatelessWidget {
@@ -13,17 +15,14 @@ class BlogTmp extends StatelessWidget {
       margin: EdgeInsets.all(14),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(5), //border corner radius
+        borderRadius: BorderRadius.circular(5),
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.5), //color of shadow
-            spreadRadius: 2, //spread radius
-            blurRadius: 5, // blur radius
-            offset: Offset(0, 2), // changes position of shadow
-            //first paramerter of offset is left-right
-            //second parameter is top to down
+            color: Colors.grey.withOpacity(0.5),
+            spreadRadius: 2,
+            blurRadius: 5,
+            offset: Offset(0, 2),
           ),
-          //you can set more BoxShadow() here
         ],
       ),
       width: double.infinity,
@@ -61,19 +60,30 @@ class BlogTmp extends StatelessWidget {
                 Expanded(
                   child: Padding(
                     padding: EdgeInsets.all(10),
-                    child: MouseRegion(
-                      child: Text(
-                        blog.title!,
-                        style: TextStyle(fontSize: 25),
+                    child: RichText(
+                      overflow: TextOverflow.clip,
+                      text: TextSpan(
+                        text: blog.title!,
+                        style: TextStyle(color: Colors.black, fontSize: 20),
+                        mouseCursor: SystemMouseCursors.click,
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            Navigator.of(ctx).push(
+                              MaterialPageRoute(builder: (ctx) {
+                                return BlogPage(blog: blog);
+                              }),
+                            );
+                          },
                       ),
-                      cursor: SystemMouseCursors.click,
                     ),
                   ),
                 ),
                 Expanded(
                   child: Center(
-                    child: Text('From: ${blog.author}',
-                        style: TextStyle(fontSize: 20)),
+                    child: Text(
+                      'From: ${blog.author}',
+                      style: TextStyle(fontSize: 20),
+                    ),
                   ),
                 ),
               ],

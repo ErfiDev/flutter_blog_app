@@ -4,8 +4,15 @@ class Blog {
   final String? author;
   final int? id;
   final String? description;
+  final String? socialImage;
 
-  Blog({this.title, this.cover, this.author, this.id, this.description});
+  Blog(
+      {this.title,
+      this.cover,
+      this.author,
+      this.id,
+      this.description,
+      this.socialImage});
 
   factory Blog.fromJson(Map<String, dynamic> json) {
     return Blog(
@@ -14,6 +21,7 @@ class Blog {
       author: json['user']['name'],
       cover: json['cover_image'],
       id: json['id'],
+      socialImage: json['social_image'],
     );
   }
 }
